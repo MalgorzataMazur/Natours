@@ -1,0 +1,32 @@
+/* 
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/ 
+
+/* universal selector */    /* that is BASIC RESET! */
+* {                                 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {                                          
+    font-family: "Lato", sans-serif;          /* FONT HERE IN BODY BECASUE IS USUALLY IHERITATED */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;                       /* 1.7 x higher than earlier defined height of line */              
+    color: #777;
+}
+
+.header {
+    height: 95vh;                          /* a#7ed56f, t the boottom left white strap 5% */
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);           /* define gradien here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+    background-size: cover;
+    background-position: top;
+
+}  
+

@@ -1,0 +1,151 @@
+/* 
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/ 
+
+/* universal selector */    /* that is BASIC RESET! */
+* {                                 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {                                          
+    font-family: "Lato", sans-serif;          /* FONT HERE IN BODY BECASUE IS USUALLY IHERITATED */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;                       /* 1.7 x higher than earlier defined height of line */              
+    color: #777;
+    padding: 30px;                          /* around all website white strap */
+}
+
+.header {
+    height: 95vh;                          /* a#7ed56f, t the boottom left white strap 5% */
+    background-image: linear-gradient(
+        to right bottom,                     /* define gradient here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+        rgba(126, 213, 111, 0.8),
+        rgba(40, 180, 131, 0.8)), 
+        url(../img/hero.jpg);          
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  /* do wedge (kiln, wcięcie) just to clip from one side, w do polygon (wilokat) we move every single corner move clockwise x & y)  */
+
+}  
+
+.logo-box {
+    position: absolute;                    /* in the left corner */
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;                          /* top&left they're in relation to the parent element  */
+    left: 50%;
+    transform: translate(-50%, -50%);         /*translation  is in relation to the elemnet itself; header promary I mean an element to be centered we have to shifted 50% of height and width of element not parent */
+    text-align: center;                /* button at the center */
+}
+
+.heading-primary {
+    color: #ffffff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden; 
+    margin-bottom: 60px;                 /* a little bit like to the top, shaky and it is to fix it  */
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    
+    animation-name: moveInLeft;               /*  for animation to woerk there're two only properties to specify aniamtion name and the anim ation duration */
+    animation-duration: 1s;                 
+    animation-timing-function: ease-out;       /* define how animation will proceed slow/fast; ease-out the anim will start faster and then will become slower by the end */
+
+
+    /*animation-delay: 3s;*/              /* set a delay we can in animation */
+    /*animation-iteration-count: 3; */          /* how many times animation should happens */
+   
+}
+
+.heading-primary-sub {
+    display: block; 
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
+    
+}
+
+@keyframes moveInLeft {            /* ANIMATION we started from @keyframes and name of animation;NOW I can specify whnt I want to happen in each moment of time of the animation  */
+    0% {                          /* initial state */
+       opacity: 0;                         /* first we wanted to be visible so opacity 0 and in the end opacity 1; opacity is one of properties that we animated here and transform property second */
+       transform: translateX(-100px);        /* the element comes in from the left side */
+    }                                          /* rotate(180deg) */
+
+    80% {
+        transform: translateX(10px);        /* to the right side goes */
+    }
+
+    100% {                        /* final state */
+        opacity: 1;                         /* first we wanted to be visible so opacity 0 and in the end opacity 1 */
+        transform: translate(0);     /* it's gonna look exactly right now */
+    }
+}
+
+
+@keyframes moveInRight {            
+       0% {
+        opacity: 0;                         
+        transform: translateX(100px);      /* moves to the right */
+    }
+
+    80% {
+        transform: translateX(-10px);   
+    }
+
+    100% {        
+        opacity: 1;                         
+        transform: translate(0);    
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;              /* if specufypadding, width, height of elemet thay sholud be display as a inline-block */
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);                       /* element moves up */
+    box-shadow: 20px 20px 20px rgba(0, 0, 0,.2);                       /* move x, y, blur, color */
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.2)
+}
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+
+
+

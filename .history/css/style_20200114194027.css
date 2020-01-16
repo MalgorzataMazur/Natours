@@ -1,0 +1,193 @@
+/* 
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/ 
+
+/* universal selector */    /* that is BASIC RESET! */
+* {                                 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;            /* 100% ; 10/16= 0.625; .625*16(px font)= 10 */
+}
+body {                                          
+    font-family: "Lato", sans-serif;          /* FONT HERE IN BODY BECASUE IS USUALLY IHERITATED */
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;                       /* 1.7 x higher than earlier defined height of line */              
+    color: #777;
+    padding: 3rem;                          /* around all website white strap */
+    box-sizing: border-box;
+}
+
+.header {
+    height: 95vh;                          /* a#7ed56f, t the boottom left white strap 5% */
+    background-image: linear-gradient(
+        to right bottom,                     /* define gradient here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+        rgba(126, 213, 111, 0.8),
+        rgba(40, 180, 131, 0.8)), 
+        url(../img/hero.jpg);          
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  /* do wedge (kiln, wcięcie) just to clip from one side, w do polygon (wilokat) we move every single corner move clockwise x & y)  */
+
+}  
+
+.logo-box {
+    position: absolute;                    /* in the left corner */
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo {
+    height: 3,5rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;                          /* top&left they're in relation to the parent element  */
+    left: 50%;
+    transform: translate(-50%, -50%);         /*translation  is in relation to the elemnet itself; header promary I mean an element to be centered we have to shifted 50% of height and width of element not parent */
+    text-align: center;                /* button at the center */
+}
+
+.heading-primary {
+    color: #ffffff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden; 
+    margin-bottom: 6rem;                 /* a little bit like to the top, shaky and it is to fix it  */
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    
+    animation-name: moveInLeft;               /*  for animation to woerk there're two only properties to specify aniamtion name and the anim ation duration */
+    animation-duration: 1s;                 
+    animation-timing-function: ease-out;       /* define how animation will proceed slow/fast; ease-out the anim will start faster and then will become slower by the end */
+
+
+    /*animation-delay: 3s;*/              /* set a delay we can in animation */
+    /*animation-iteration-count: 3; */          /* how many times animation should happens */
+   
+}
+
+.heading-primary-sub {
+    display: block; 
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    
+}
+
+@keyframes moveInLeft {            /* ANIMATION we started from @keyframes and name of animation;NOW I can specify whnt I want to happen in each moment of time of the animation  */
+    0% {                          /* initial state */
+       opacity: 0;                         /* first we wanted to be visible so opacity 0 and in the end opacity 1; opacity is one of properties that we animated here and transform property second */
+       transform: translateX(-10rem);        /* the element comes in from the left side */
+    }                                          /* rotate(180deg) */
+
+    80% {
+        transform: translateX(1rem);        /* to the right side goes */
+    }
+
+    100% {                        /* final state */
+        opacity: 1;                         /* first we wanted to be visible so opacity 0 and in the end opacity 1 */
+        transform: translate(0);     /* it's gonna look exactly right now */
+    }
+}
+
+
+@keyframes moveInRight {            
+       0% {
+        opacity: 0;                         
+        transform: translateX(10rem);      /* moves to the right */
+    }
+
+    80% {
+        transform: translateX(-1rem);   
+    }
+
+    100% {        
+        opacity: 1;                         
+        transform: translate(0);    
+    }
+}
+
+@keyframes moveInBottom {              /* after load btn is going from the bottom */
+    0% {
+     opacity: 0;                      /* befoee strats anim btn sholud be lover current his position */
+     transform: translateY(3rem);      /* moves to the right */
+ }
+
+ 100% {        
+     opacity: 1;                         
+     transform: translate(0);    
+ }
+}
+/* pseudo-classes */
+.btn:link,                              /* link an anchor element; we straed at first step from  */
+.btn:visited {                          /* link and vistedt look the same here */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;              /* if specufypadding, width, height of elemet thay sholud be display as a inline-block */
+    border-radius: 10rem;
+    transition: all .2s;               /* build a creative hover animation effect*/  /*first which properties we want animate, time duration*  */
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);                       /* element moves up */
+    box-shadow: 0 1em 2rem rgba(0, 0, 0,.2);                       /* move x, y, blur, color; a very subtle shadow and here is 20% almost transparent*/
+}
+
+.btn:active {                           /* click element */
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.2)
+}
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+/* pseudo-elements to style caertain parts of elements*/  /* we want put this buuton behind the main btb */
+.btn::after {    /* we strat do taht looks like it zooms out to infinity when we hover and it comes back when we hover out; pseudoelement is like a child of btn */
+    content: "";                      /* content is always necessary */
+    display: inline-block;            /* display is always necessary as well, the same dispaly as btn  */
+    height: 100%;                     /* teh dame property like btn we want to look the same as a btn, is like a child of btn*/
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;               /* behind the btn we want put this actual btn we use position absol and the reference is the fisrt element with the relative position that it can find and it should be BTN (vis alnd link) and now it will be hidden behind the btn*/
+    top: 0;
+    left: 0;
+    z-index: -1;                    /* defines the position of the elements if they are on top of another */
+    transition: all .4s;
+
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after { /* when hover yhe btn we wnat some certain style for the after pseudo-elemenr, so this is an after pseudo-element only when we have the button on the hover state*/
+    transform: scaleX(1.4) scaleY(1.6);    /* we want to be bigger after hover state; cen rowny zmkazdej str dlatego x i y skalujemy */ /* and we want to animate like before, so animate in initial state- btn:after above pseudoelement*/
+    opacity: 0;         /* opacity 0 sets sth to invisible basicilly, so btn disappear */
+}
+
+.btn-animated {   /* we ant to only this btn to animated from the bottom */
+    animation: moveInBottom .5s ease-out .75s;     /* here is delay the last property */
+    animation-fill-mode: backwards;     /* btn is visible before animation, we don't want that so we use this property and we set WSTECZ it means automacily the style up to 0% (moveinbottom) before the animation starts*/
+}
