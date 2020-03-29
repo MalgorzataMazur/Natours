@@ -1,0 +1,68 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh; //we move up section cause we have space betweeen section& header because we have wedge so 95ch-75vh(polygon on the right siede)=20
+
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom,                     /* define gradient here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)), 
+    url(../img/nat-4.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);  //diffrent way to cut; intesad of clip-path
+    margin-top: -10rem;
+
+    & > * {    //select direct child of sf- row 
+        transform: skewY(7deg); //skew back inside elements are straight
+    }
+
+    
+    @include respond(tab-port) {
+        padding: 15rem 0;
+    }
+
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+
+    
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
+
+}
+
+.section-stories {
+    position: relative; //parent of video to be behaind our elelemts like the bground
+    padding: 15rem 0;
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),
+                                url(../img/nat-10.jpg); //graduent on the top of img; //solid coor gardient 
+    background-size: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+    height: 50rem;
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+}

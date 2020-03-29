@@ -1,0 +1,26 @@
+
+/* universal selector */    /* that is BASIC RESET! */
+*,
+*::after,
+*::before {                                 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%;            /* 100% ; 10/16= 0.625; .625*16(px font)= 10 */
+
+  
+    @include respond-phone {
+        font-size: 50%;
+    }
+
+    @include respond(phone) {
+        font-size: 50%;
+    }
+}
+body {                                          
+    box-sizing: border-box;
+}

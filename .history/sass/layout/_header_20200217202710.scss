@@ -1,0 +1,32 @@
+
+.header {
+    height: 95vh;                          /* a#7ed56f, t the boottom left white strap 5% */
+    background-image: linear-gradient(
+        to right bottom,                     /* define gradient here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)), 
+        url(../img/hero.jpg);          
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);  /* do wedge (kiln, wcięcie) just to clip from one side, w do polygon (wilokat) we move every single corner move clockwise x & y)  */
+
+    &__logo-box {
+        position: absolute;                    /* in the left corner */
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 40%;                          /* top&left they're in relation to the parent element  */
+        left: 50%;
+        transform: translate(-50%, -50%);         /*translation  is in relation to the elemnet itself; header promary I mean an element to be centered we have to shifted 50% of height and width of element not parent */
+        text-align: center;                /* button at the center */
+    }
+}  

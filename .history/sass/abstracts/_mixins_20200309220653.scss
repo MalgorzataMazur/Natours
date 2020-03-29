@@ -1,0 +1,51 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+//MEDIA QUERY MANAGER
+/*
+0-600px; Phone
+600-900px; Tablet portrait
+900-1200px; Tablet landscape
+[1200-1800] is where our normal style apply
+1800px + :     Big Desktop
+*/
+
+@mixin respond-phone {
+    @media (max-width: 600px) { @content }; /*content directive*/
+}
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+@mixin respond($breakpoint) {  /* if this directive basically makes the test if the result is true sth happens*/
+    @if $breakpoint == phone { /*if breakpoint is called phone*/
+        @media (max-width: 600px) { @content };
+    }     
+    @if $breakpoint == tab-port {
+        @media (max-width: 900px) { @content };
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 1200px) { @content };
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 1800px) { @content };
+    }
+} 

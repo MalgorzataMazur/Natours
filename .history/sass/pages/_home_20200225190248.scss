@@ -1,0 +1,33 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh; //we move up section cause we have space betweeen section& header because we have wedge so 95ch-75vh(polygon on the right siede)=20
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom,                     /* define gradient here linear, from wich side sholuld starts here in line gradienfrom the left top to the right, colours */
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)), 
+    url(../img/nat-4.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);  //diffrent way to cut; intesad of clip-path
+    margin-top: -10rem;
+
+    & > * {    //select direct child of sf- row 
+        transform: skewY(7deg); //skew back inside elements are straight
+    }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
+
+.section-stories {
+    position: relative;
+    padding: 15rem 0;
+    background-color: $color-grey-light-1;
+}

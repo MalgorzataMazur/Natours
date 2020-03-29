@@ -1,0 +1,43 @@
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 55%; // always define width of img in % bthe img will be nice scales of viewports
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4); 
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all .2s;
+        outline-offset: 2rem; //give a space between the border; zooms in a bit teh img
+
+
+        &--p1 {
+            left: 0;
+            top: -2rem; 
+        }
+
+        &--p2 {
+            right: 0;
+            top: 2rem; 
+        }
+
+        &--p3{
+            left: 20%;
+            top: 10rem; 
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary; // instead of norder, do more than border
+            transform: scale(1.05) translateY(-.5); //zooming
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 20; // higher index, is on the top
+        } 
+
+    &:hover &__photo:not(:hover) {  // stop zoom in hoover img, composition:hover composition__photo:not(:hover)
+        transform: scale(.95);
+        box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+    
+    }
+
+    }
+}

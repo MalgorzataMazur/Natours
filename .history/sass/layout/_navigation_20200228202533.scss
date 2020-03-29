@@ -1,0 +1,35 @@
+.navigation {
+    &__checkbox {
+
+    }
+
+    &__button {
+
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed; //very similiar to posit absolute; fixed doesnt change position as we scroll the page, also takes tle elemen out of the flow&allows to specify it in relarion to a positioned elem
+        top: 6.5rem;
+        right: 6.5rem;
+        background-image: radial-gradient($color-primary-light, $color-primary-dark); //starts in the middle of an element& goes from there on all the outside directions basically 
+    }
+
+    &__nav {
+
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+        
+    }
+
+    &__link {
+
+    }
+}
